@@ -1,0 +1,30 @@
+.color-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.color-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.color-legend__swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.color-legend__swatch--1 { background: var(--rating-1); }
+.color-legend__swatch--2 { background: var(--rating-2); }
+.color-legend__swatch--3 { background: var(--rating-3); }
+.color-legend__swatch--4 { background: var(--rating-4); }
+.color-legend__swatch--5 { background: var(--rating-5); }

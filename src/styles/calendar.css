@@ -1,0 +1,156 @@
+.calendar {
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.calendar-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.calendar-nav-btn {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.calendar-nav-btn:hover {
+  background: #f5f5f5;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #888;
+  padding-bottom: 0.25rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  border: 1px solid transparent;
+}
+
+.calendar-day--outside {
+  color: #c0c0c0;
+}
+
+.calendar-day--today {
+  border-color: #333;
+  font-weight: 700;
+}
+
+.calendar-day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  border: 1px solid transparent;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.calendar-day:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.calendar-day--outside {
+  color: #c0c0c0;
+}
+
+.calendar-day--today {
+  border-color: #333;
+  font-weight: 700;
+}
+
+.calendar-day--future {
+  color: #d5d5d5;
+  cursor: not-allowed;
+}
+
+.calendar-day--selected {
+  background: #333;
+  color: #fff;
+  font-weight: 700;
+}
+
+.calendar-selected-info {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Rating colors — backgrounds pull from the CSS variables defined in index.css */
+.calendar-day--rating-1 {
+  background: var(--rating-1);
+  color: #fff;
+}
+
+.calendar-day--rating-2 {
+  background: var(--rating-2);
+  color: #fff;
+}
+
+.calendar-day--rating-3 {
+  background: var(--rating-3);
+  color: #4a3b00;
+}
+
+.calendar-day--rating-4 {
+  background: var(--rating-4);
+  color: #1a3d0f;
+}
+
+.calendar-day--rating-5 {
+  background: var(--rating-5);
+  color: #fff;
+}
+
+/* Today and Selected use box-shadow/outline instead of background,
+   so they layer visibly on top of a rating color instead of hiding it. */
+.calendar-day--today {
+  border-color: #333;
+  font-weight: 700;
+}
+
+.calendar-day--selected {
+  outline: 3px solid #333;
+  outline-offset: -3px;
+  font-weight: 700;
+}
+
+/* Selected + no rating: fall back to the old solid highlight, since there's
+   no background color to layer on top of. */
+.calendar-day--selected:not([class*='calendar-day--rating-']) {
+  background: #333;
+  color: #fff;
+}
