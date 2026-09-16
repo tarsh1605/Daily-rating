@@ -3,22 +3,29 @@
   --color-text: #1a1a1a;
   --color-border: #e0e0e0;
 
-  --rating-1: #e74c3c; /* red */
-  --rating-2: #e67e22; /* orange */
-  --rating-3: #f1c40f; /* yellow */
-  --rating-4: #a3d977; /* light green */
-  --rating-5: #27ae60; /* green */
+  --rating-1: #e74c3c;
+  --rating-2: #e67e22;
+  --rating-3: #f1c40f;
+  --rating-4: #a3d977;
+  --rating-5: #27ae60;
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
+  /* Sensible default popup size — content can grow taller (e.g. rating
+     selector expanding the panel) but starts at a comfortable width. */
+  width: 380px;
 }
 
 .app {
@@ -26,4 +33,10 @@ body {
   max-width: 400px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.calendar--loading {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #888;
 }
